@@ -1,3 +1,5 @@
+library dolphin_flutter;
+
 import 'package:package_info/package_info.dart';
 
 class AppUtils {

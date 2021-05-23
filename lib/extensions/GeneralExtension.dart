@@ -1,3 +1,5 @@
+library dolphin_flutter;
+
 import 'package:dolphin_flutter/utils/DateTimeUtils.dart';
 import 'package:dolphin_flutter/utils/StringUtils.dart';
 import 'package:dolphin_flutter/utils/ValidatorUtils.dart';

@@ -1,3 +1,5 @@
+library dolphin_flutter;
+
 import 'package:intl/intl.dart';
 
 class DateUtils {

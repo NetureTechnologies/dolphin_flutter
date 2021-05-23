@@ -1,3 +1,5 @@
+library dolphin_flutter;
+
 import 'dart:io';
 
 class DeviceUtils {

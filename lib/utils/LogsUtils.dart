@@ -1,3 +1,5 @@
+library dolphin_flutter;
+
 import 'package:flutter/cupertino.dart';
 
 class LogsUtils {
