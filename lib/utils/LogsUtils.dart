@@ -9,4 +9,7 @@ class LogsUtils {
   static void debug(String related, String message) {
     debugPrint("[$related] => $message");
   }
+  static void getXLog(String text, {bool isError = false}) {
+    Future.microtask(() => print('** $text. isError: [$isError]'));
+  }
 }
