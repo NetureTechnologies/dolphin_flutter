@@ -9,6 +9,10 @@ class AppUtils {
     _packageInfo = await PackageInfo.fromPlatform();
   }
 
+  AppUtils() {
+    PackageInfo.fromPlatform().then((value) => _packageInfo = value);
+  }
+
   String getVersionCute() => _packageInfo.version + "." + _packageInfo.buildNumber;
 
   bool isCurrentVersion(String version, [String build]) {
