@@ -1,5 +1,7 @@
 library dolphin_flutter;
 
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:package_info/package_info.dart';
 
 class AppUtils {
@@ -18,4 +20,7 @@ class AppUtils {
   }
 
   bool isCurrentBuild(String build) => build == _packageInfo.buildNumber;
+
+  bool isPlatformMobile() => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
+  bool isWeb() => kIsWeb;
 }
