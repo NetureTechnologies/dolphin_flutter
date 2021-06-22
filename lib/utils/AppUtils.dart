@@ -12,15 +12,13 @@ class AppUtils {
   }
 
   String getVersionCute() => _packageInfo.version + "." + _packageInfo.buildNumber;
-
   bool isCurrentVersion(String version, [String build]) {
     if (build != null)
       return version == _packageInfo.version && build == _packageInfo.buildNumber;
     return version == _packageInfo.version;
   }
-
   bool isCurrentBuild(String build) => build == _packageInfo.buildNumber;
 
-  bool isPlatformMobile() => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
-  bool isWeb() => kIsWeb;
+  bool get isPlatformMobile => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
+  bool get isPlatformWeb => kIsWeb;
 }
