@@ -1,12 +1,12 @@
 name: dolphin_flutter
 description: Dolphin Shared Library
-version: 0.0.4
+version: 0.0.5
 author:
 homepage: https://www.neture.com.br
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.2.0"
 
 dependencies:
   flutter:
@@ -16,7 +16,7 @@ dependencies:
   package_info: ^2.0.0
 
   # Text
-  quiver: ^2.0.5
+  quiver: ^3.0.1
   recase: ^4.0.0
   cpf_cnpj_validator: ^2.0.0
 

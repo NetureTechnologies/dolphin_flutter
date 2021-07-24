@@ -90,9 +90,9 @@ class DateTimeUtils {
     return "${dateDivided[2]}-${dateDivided[1]}-${dateDivided[0]}T${divided.length > 1 ? divided[1] : "00"}:00";
   }
 
-  static String dateToBrString(DateTime date) {
+  static String dateToBrString(DateTime? date) {
     if(date==null)
-      return null;
+      return "";
 
     return DateFormat("dd/MM/yyyy").format(date);
   }

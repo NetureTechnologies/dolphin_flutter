@@ -1013,19 +1013,19 @@ extension RichTextExtension on RichText {
   /// Creates a copy of this RichText but the given fields will be replaced with
   /// the new values.
   RichText copyWith(
-      {Key key,
-        InlineSpan text,
-        StrutStyle strutStyle,
-        TextAlign textAlign,
+      {Key? key,
+        InlineSpan? text,
+        StrutStyle? strutStyle,
+        TextAlign? textAlign,
         TextDirection textDirection = TextDirection.ltr,
-        Locale locale,
-        bool softWrap,
-        TextOverflow overflow,
-        double textScaleFactor,
-        int maxLines,
-        String semanticsLabel,
-        TextWidthBasis textWidthBasis,
-        TextStyle style}) {
+        Locale? locale,
+        bool? softWrap,
+        TextOverflow? overflow,
+        double? textScaleFactor,
+        int? maxLines,
+        String? semanticsLabel,
+        TextWidthBasis? textWidthBasis,
+        TextStyle? style}) {
     return RichText(text: this.text,
         key: key ?? this.key,
         strutStyle: strutStyle ?? this.strutStyle,

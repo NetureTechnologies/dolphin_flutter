@@ -12,7 +12,7 @@ extension TextUtilsStringExtension on String {
   ///
   /// Characters considered "whitespace" are listed [here](https://stackoverflow.com/a/59826129/10830091).
   bool get isNullEmptyOrWhitespace =>
-      this == null || this.isEmpty || this.trim().isEmpty;
+      this.isEmpty || this.trim().isEmpty;
 
   /// Returns true if cpf or cpnj is:
   /// - valid
@@ -82,27 +82,16 @@ extension DoubleExtensions on double {
 extension GeneralUtilsObjectExtension on Object {
   /// Returns true if object is:
   /// - null `Object`
-  bool get isNull => this == null;
-
-  /// Returns true if object is NOT:
-  /// - null `Object`
-  bool get isNotNull => this != null;
-
-  /// Returns true if object is:
-  /// - null `Object`
   /// - empty `String`
   /// - empty `Iterable` (list, map, set, ...)
-  bool get isNullOrEmpty =>
-      isNull || _isStringObjectEmpty || _isIterableObjectEmpty;
+  bool get isNullOrEmpty => _isStringObjectEmpty || _isIterableObjectEmpty;
 
   /// Returns true if object is:
   /// - null `Object`
   /// - empty `String`
   /// - empty `Iterable` (list, map, set, ...)
   /// - false `bool`
-  bool get isNullEmptyOrFalse =>
-      isNull ||
-          _isStringObjectEmpty ||
+  bool get isNullEmptyOrFalse => _isStringObjectEmpty ||
           _isIterableObjectEmpty ||
           _isBoolObjectFalse;
 
@@ -112,9 +101,7 @@ extension GeneralUtilsObjectExtension on Object {
   /// - empty `Iterable` (list, map, set, ...)
   /// - false `bool`
   /// - zero `num`
-  bool get isNullEmptyFalseOrZero =>
-      isNull ||
-          _isStringObjectEmpty ||
+  bool get isNullEmptyFalseOrZero => _isStringObjectEmpty ||
           _isIterableObjectEmpty ||
           _isBoolObjectFalse ||
           _isNumObjectZero;

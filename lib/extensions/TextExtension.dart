@@ -1018,19 +1018,19 @@ extension TextExtension on Text {
   /// Creates a copy of this Text but the given fields will be replaced with
   /// the new values.
   Text copyWith(
-      {Key key,
-        StrutStyle strutStyle,
-        TextAlign textAlign,
-        TextDirection textDirection = TextDirection.ltr,
-        Locale locale,
-        bool softWrap,
-        TextOverflow overflow,
-        double textScaleFactor,
-        int maxLines,
-        String semanticsLabel,
-        TextWidthBasis textWidthBasis,
-        TextStyle style}) {
-    return Text(this.data,
+      {Key? key,
+        StrutStyle? strutStyle,
+        TextAlign? textAlign,
+        TextDirection? textDirection = TextDirection.ltr,
+        Locale? locale,
+        bool? softWrap,
+        TextOverflow? overflow,
+        double? textScaleFactor,
+        int? maxLines,
+        String? semanticsLabel,
+        TextWidthBasis? textWidthBasis,
+        TextStyle? style}) {
+    return Text(this.data?? "",
         key: key ?? this.key,
         strutStyle: strutStyle ?? this.strutStyle,
         textAlign: textAlign ?? this.textAlign,

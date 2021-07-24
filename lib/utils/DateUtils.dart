@@ -89,14 +89,14 @@ class DateUtils {
     return DateFormat("dd/MM/yyyy").format(date);
   }
 
-  static String dateToBrString(DateTime date) {
+  static String dateToBrString(DateTime? date) {
     if(date==null)
-      return null;
+      return "";
 
     return DateFormat("dd/MM/yyyy").format(date);
   }
 
-  static DateTime formatFromStringToDate(String date) {
+  static DateTime? formatFromStringToDate(String? date) {
     if(date == null || date.isEmpty)
       return null;
 

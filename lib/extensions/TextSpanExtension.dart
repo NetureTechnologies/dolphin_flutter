@@ -834,10 +834,11 @@ extension TextSpanExtension on TextSpan {
   /// Creates a copy of this TextSpan but the given fields will be replaced with
   /// the new values.
   TextSpan copyWith(
-      {String text,
-        TextStyle style,
-        List<InlineSpan> children,
-        String semanticsLabel, TextAlign textAlign}) {
+      {String? text,
+        TextStyle? style,
+        List<InlineSpan>? children,
+        String? semanticsLabel,
+        TextAlign? textAlign}) {
     return TextSpan(text: this.text,
         semanticsLabel: semanticsLabel ?? this.semanticsLabel,
         children: this.children,

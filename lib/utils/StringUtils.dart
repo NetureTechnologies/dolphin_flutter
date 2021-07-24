@@ -30,7 +30,7 @@ class StringUtils {
   static String centsToReaisNumbersOnly(num value, [int digitsLimit = 0]) {
     final money = NumberFormat("#,##0.00", "pt_BR");
 
-    value = value == null ? 0 : value / 100;
+    value = value / 100;
 
     var formatted = money.format(value);
     if (digitsLimit > 0 && formatted.length > digitsLimit)
@@ -46,7 +46,7 @@ class StringUtils {
   static String formatToReaisNumbersOnly(num value, [int digitsLimit = 0]) {
     final money = NumberFormat("#,##0.00", "pt_BR");
 
-    var formatted = money.format(value ?? 0);
+    var formatted = money.format(value);
     if (digitsLimit > 0 && formatted.length > digitsLimit)
       formatted = formatted.substring(formatted.length - digitsLimit);
 
@@ -83,7 +83,6 @@ class StringUtils {
     RegExp regExp = RegExp(r'^(\d{2})(\d{4})(\d{4})$');
 
     RegExp regexStrip = RegExp(STRIP_REGEX);
-    value = value == null ? "" : value;
     value = value.replaceAll(regexStrip, "");
 
     return value.replaceAllMapped(
@@ -102,7 +101,6 @@ class StringUtils {
       return value;
 
     RegExp regexStrip = RegExp(STRIP_REGEX);
-    value = value == null ? "" : value;
     value = value.replaceAll(regexStrip, "");
 
     return value.replaceAllMapped(
@@ -115,7 +113,6 @@ class StringUtils {
     RegExp regExp = RegExp(r'^(\d{2})(\d{3})(\d{3})$');
 
     RegExp regexStrip = RegExp(STRIP_REGEX);
-    value = value == null ? "" : value;
     value = value.replaceAll(regexStrip, "");
 
     return value.replaceAllMapped(
@@ -135,7 +132,7 @@ class StringUtils {
   }
 
   static String formatName(String value) {
-    if (value == null || value.isEmpty)
+    if (value.isEmpty)
       return value;
 
     //Remove numbers
@@ -156,22 +153,21 @@ class StringUtils {
   }
 
   static String trim(String value) {
-    if (value != null) return value.trim();
-    return value;
+    return value.trim();
   }
 
   static String trimAll(String value) {
-    if (value != null) return value.replaceAll(regexWhitespaces, "");
-    return value;
+    return value.replaceAll(regexWhitespaces, "");
   }
 
-  static String getInitials(String value, {int limit}) {
+  static String getInitials(String value, {int? limit}) {
     String initials = value
         .split(" ")
         .where((word) => !isEmpty(word))
         .map((word) => word.substring(0, 1))
         .join("");
-    return initials.length >= limit ? initials.substring(0, limit) : initials;
+
+    return limit!=null && initials.length >= limit ? initials.substring(0, limit) : initials;
   }
 
   static String getInitialsFirstnameAndLastname(String value) {
