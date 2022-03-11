@@ -40,6 +40,8 @@ extension TextUtilsStringExtension on String {
 extension DateTimeUtilsExtension on DateTime {
   // Formatters
   String get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
+  String get formatApiDate => DateTimeUtils.apiFormatDateToBackend(this);
+  String get formatApiDateTime => DateTimeUtils.apiFormatDateTimeToBackend(this);
   String get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
   String get formatApiInternationalDateTime => DateTimeUtils.apiFormatInternationalWithTime(this);
 
