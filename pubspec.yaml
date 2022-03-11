@@ -25,6 +25,9 @@ dependencies:
   # Fonts
   google_fonts: ^2.2.0
 
+  # Logging
+  logger: ^1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
