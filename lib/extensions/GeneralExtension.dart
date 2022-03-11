@@ -11,67 +11,50 @@ extension TextUtilsStringExtension on String {
   /// - whitespace string.
   ///
   /// Characters considered "whitespace" are listed [here](https://stackoverflow.com/a/59826129/10830091).
-  bool get isNullEmptyOrWhitespace =>
-      this.isEmpty || this.trim().isEmpty;
+  bool get isNullEmptyOrWhitespace => this.isEmpty || this.trim().isEmpty;
 
-  /// Returns true if cpf or cpnj is:
-  /// - valid
-  ///
+  // Validators
   bool get isCpfOrCnpjValid => ValidatorUtils.validateCPFandCNPJ(this);
-
   bool get isPhoneNumberValid => ValidatorUtils.validatePhoneNumber(this);
-
   bool get isDateValid => ValidatorUtils.validateDate(this);
-
-  bool get isDateFuture => DateTimeUtils.isDateInTheFuture(this.brToDate);
-
   bool get isEmailValid => ValidatorUtils.validateEmail(this);
   bool get isEmailValidAfterTrim => ValidatorUtils.validateEmailTrimSpaces(this);
 
+  // Getters
   String get getNumberOnly => StringUtils.getNumberOnly(this);
-
   String get getNumberDDD => StringUtils.getNumberDDD(this);
-
   String get getPhoneAfterDDD => StringUtils.getPhoneAfterDDD(this);
 
+  // Formatters
   String get formatPhone => StringUtils.formatPhoneNumber(this);
-
   String get formatPhoneWithCountryCode => StringUtils.formatPhoneNumber(this.substring(2,this.length));
-
-  String get fromDateTimeBackendToStringBr => DateTimeUtils.smartBackendDateTimeConversion(this);
-
-  DateTime get brToDate => DateTimeUtils.brToDate(this);
-
   String get formatCentsToReais => StringUtils.centsToReais(int.parse(this));
-
   String get formatName => StringUtils.formatName(this);
-
   String get formatCpfOrCnpj => StringUtils.formatCpfOrCnpj(this);
+
+  // Converters
+  DateTime get convertDateFromApi => DateTimeUtils.apiFormatDateFromBackend(this);
+  DateTime get convertDateTimeFromApi => DateTimeUtils.apiFormatDateTimeFromBackend(this);
 }
 
 extension DateTimeUtilsExtension on DateTime {
-  String get dateToBrString => DateTimeUtils.dateToBrString(this);
+  // Formatters
+  String get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
+  String get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
+  String get formatApiInternationalDateTime => DateTimeUtils.apiFormatInternationalWithTime(this);
 
-  String get dateToApiFormat => DateTimeUtils.apiFormat(this);
-
-  String get dateToUiFormat => DateTimeUtils.uiFormat(this);
-
-  String get dateTimeToApiFormat => DateTimeUtils.apiFormatWithTime(this);
+  // Helpers
+  bool get isDateInTheFuture => DateTimeUtils.isDateInTheFuture(this);
+  bool get isDateInThePast => DateTimeUtils.isDateInThePast(this);
 }
 
 extension CurrencyUtilsExtension on num {
+  // Formatters
   String get formatToReais => StringUtils.formatToReais(this);
-
   String get formatToReaisNumbersOnly => StringUtils.formatToReaisNumbersOnly(this);
-
   String get formatCentsToReais => StringUtils.centsToReais(this);
-
   String get formatCentsToReaisNoSymbol => StringUtils.centsToReaisNoSymbol(this);
-
-  String get formatCentsToReaisHidden => StringUtils.centsToReais(this)
-      .replaceAll(new RegExp(r'\d'),'*')
-      .replaceAll('.', '*')
-      .replaceAll(',', '*');
+  String get formatCentsToReaisHidden => StringUtils.centsToReais(this).replaceAll(new RegExp(r'\d'),'*').replaceAll('.', '*').replaceAll(',', '*');
 }
 
 extension DoubleExtensions on double {
