@@ -7,6 +7,10 @@ import 'package:package_info_plus/package_info_plus.dart';
 class AppUtils {
   static PackageInfo? _packageInfo;
 
+  Future<AppUtils> init() async {
+    return this;
+  }
+
   static void earlyInitialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
   }
