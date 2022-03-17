@@ -7,12 +7,9 @@ import 'package:package_info_plus/package_info_plus.dart';
 class AppUtils {
   static PackageInfo? _packageInfo;
 
-  Future<AppUtils> init() async {
-    return this;
-  }
-
-  static void earlyInitialize() async {
+  Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
+    return this;
   }
 
   String getVersionCute() => "${_packageInfo?.version}.${_packageInfo?.buildNumber}";
