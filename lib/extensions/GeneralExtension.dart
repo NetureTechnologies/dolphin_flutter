@@ -37,14 +37,16 @@ extension TextUtilsStringExtension on String {
   DateTime get convertDateTimeFromApi => DateTimeUtils.apiFormatDateTimeFromBackend(this);
 }
 
-extension DateTimeUtilsExtension on DateTime {
+extension DateTimeNullableUtilsExtension on DateTime? {
   // Formatters
-  String get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
-  String get formatApiDate => DateTimeUtils.apiFormatDateToBackend(this);
-  String get formatApiDateTime => DateTimeUtils.apiFormatDateTimeToBackend(this);
-  String get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
-  String get formatApiInternationalDateTime => DateTimeUtils.apiFormatInternationalWithTime(this);
+  String? get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
+  String? get formatApiDate => DateTimeUtils.apiFormatDateToBackend(this);
+  String? get formatApiDateTime => DateTimeUtils.apiFormatDateTimeToBackend(this);
+  String? get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
+  String? get formatApiInternationalDateTime => DateTimeUtils.apiFormatInternationalWithTime(this);
+}
 
+extension DateTimeUtilsExtension on DateTime {
   // Helpers
   bool get isDateInTheFuture => DateTimeUtils.isDateInTheFuture(this);
   bool get isDateInThePast => DateTimeUtils.isDateInThePast(this);
