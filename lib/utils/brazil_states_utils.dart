@@ -1,14 +1,16 @@
 library dolphin_flutter;
 
+import 'package:collection/collection.dart';
+
 class BrazilStatesUtils {
-  static BrazilStatesModel getStateByCode(String code) =>
-      ufList.firstWhere((element) => element.code == code);
+  static BrazilStatesModel? getStateByCode(String? code) =>
+      ufList.firstWhereOrNull((element) => element.code == code);
 
-  static String getStateNameByCode(String code) =>
-      ufList.firstWhere((element) => element.code == code).name;
+  static String? getStateNameByCode(String? code) =>
+      ufList.firstWhereOrNull((element) => element.code == code)?.name;
 
-  static String getStateCodeByName(String name) =>
-      ufList.firstWhere((element) => element.name == name).code;
+  static String? getStateCodeByName(String? name) =>
+      ufList.firstWhereOrNull((element) => element.name == name)?.code;
 }
 
 
