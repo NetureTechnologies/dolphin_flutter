@@ -15,6 +15,7 @@ class BrazilStatesUtils {
 
 
 var ufList = [
+  BrazilStatesModel("", ""),
   BrazilStatesModel("Acre", "AC"),
   BrazilStatesModel("Alagoas", "AL"),
   BrazilStatesModel("Amapá", "AP"),
