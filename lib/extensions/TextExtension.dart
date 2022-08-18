@@ -1,7 +1,6 @@
 library dolphin_flutter;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 extension TextExtension on Text {
   /// Initializes [key] for subclasses.
@@ -591,45 +590,45 @@ extension TextExtension on Text {
   /// The typeface thickness to use when painting the text
   ///
   /// Thin, the least thick - FontWeight.w100
-  Text thin() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w100));
+  Text thin() => copyWith(style: TextStyle(fontWeight: FontWeight.w100));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Extra-light - FontWeight.w200
-  Text extraLight() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w200));
+  Text extraLight() => copyWith(style: TextStyle(fontWeight: FontWeight.w200));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Light - FontWeight.w300
-  Text light() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w300));
+  Text light() => copyWith(style: TextStyle(fontWeight: FontWeight.w300));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Medium - FontWeight.w500
-  Text medium() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w500));
+  Text medium() => copyWith(style: TextStyle(fontWeight: FontWeight.w500));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Semi-bold - FontWeight.w600
-  Text semiBold() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w600));
+  Text semiBold() => copyWith(style: TextStyle(fontWeight: FontWeight.w600));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Bold - FontWeight.bold - FontWeight.w700
-  Text bold() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold));
+  Text bold() => copyWith(style: TextStyle(fontWeight: FontWeight.bold));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Extra-bold - FontWeight.w800
-  Text extraBold() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w800));
+  Text extraBold() => copyWith(style: TextStyle(fontWeight: FontWeight.w800));
 
   /// The typeface thickness to use when painting the text
   ///
   /// Black, the most thick - FontWeight.w900
-  Text boldBlack() => copyWith(style: GoogleFonts.ubuntu(fontWeight: FontWeight.w900));
+  Text boldBlack() => copyWith(style: TextStyle(fontWeight: FontWeight.w900));
 
   /// The typeface thickness to use when painting the text
-  Text setFontWeight(FontWeight fontWeight) => copyWith(style: GoogleFonts.ubuntu(fontWeight: fontWeight));
+  Text setFontWeight(FontWeight fontWeight) => copyWith(style: TextStyle(fontWeight: fontWeight));
 
   /// The typeface variant to use when drawing the letters
   ///
