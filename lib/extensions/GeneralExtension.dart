@@ -40,6 +40,7 @@ extension TextUtilsStringExtension on String {
 extension DateTimeNullableUtilsExtension on DateTime? {
   // Formatters
   String? get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
+  String? get formatUiTimeBrazil => DateTimeUtils.uiFormatTimeBrazil(this);
   String? get formatApiDate => DateTimeUtils.apiFormatDateToBackend(this);
   String? get formatApiDateTime => DateTimeUtils.apiFormatDateTimeToBackend(this);
   String? get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
