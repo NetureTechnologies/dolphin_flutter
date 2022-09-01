@@ -1,5 +1,6 @@
 library dolphin_flutter;
 
+import 'package:byte_converter/byte_converter.dart';
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 import 'package:intl/intl.dart';
@@ -276,5 +277,25 @@ class StringUtils {
 
   static String formatRechargeTime(String value) {
     return DateFormat("hh:mm").format(parseRechargeDateTime(value));
+  }
+
+  /*
+   * Data Sizes
+   */
+  static String formatBytesReadable(num bytes) {
+    ByteConverter converter = ByteConverter(bytes.toDouble());
+
+    if(bytes >= 1099511627776) {
+      return "${converter.teraBytes} TB";
+    }
+    else if (bytes >= 1073741824) {
+      return "${converter.gigaBytes} GB";
+    }
+    else if (bytes >= 1048576) {
+      return "${converter.megaBytes} MB";
+    }
+    else {
+      return "${converter.kiloBytes} KB";
+    }
   }
 }

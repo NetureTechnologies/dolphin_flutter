@@ -60,6 +60,7 @@ extension CurrencyUtilsExtension on num {
   String get formatCentsToReais => StringUtils.centsToReais(this);
   String get formatCentsToReaisNoSymbol => StringUtils.centsToReaisNoSymbol(this);
   String get formatCentsToReaisHidden => StringUtils.centsToReais(this).replaceAll(new RegExp(r'\d'),'*').replaceAll('.', '*').replaceAll(',', '*');
+  String get formatBytesReadable => StringUtils.formatBytesReadable(this);
 }
 
 extension DoubleExtensions on double {
