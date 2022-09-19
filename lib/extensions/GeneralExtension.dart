@@ -3,6 +3,7 @@ library dolphin_flutter;
 import 'package:dolphin_flutter/utils/DateTimeUtils.dart';
 import 'package:dolphin_flutter/utils/StringUtils.dart';
 import 'package:dolphin_flutter/utils/ValidatorUtils.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 extension TextUtilsStringExtension on String {
   /// Returns true if string is:
@@ -51,6 +52,27 @@ extension DateTimeUtilsExtension on DateTime {
   // Helpers
   bool get isDateInTheFuture => DateTimeUtils.isDateInTheFuture(this);
   bool get isDateInThePast => DateTimeUtils.isDateInThePast(this);
+}
+
+extension DateTimeNullable on DateTime? {
+  String get timeAgo {
+    timeago.setLocaleMessages('pt_br', timeago.PtBrShortMessages());
+    timeago.setLocaleMessages('pt_br_short', timeago.PtBrMessages());
+    if(this == null) {
+      return toString();
+    }
+
+    return timeago.format(this!, locale: 'pt_br_short');
+  }
+
+  String get timeAgoShort {
+    timeago.setLocaleMessages('pt_br_short', timeago.PtBrMessages());
+    if(this == null) {
+      return toString();
+    }
+
+    return timeago.format(this!, locale: 'pt_br_short');
+  }
 }
 
 extension CurrencyUtilsExtension on num {
