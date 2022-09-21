@@ -49,6 +49,7 @@ class DateTimeUtils {
   static String? apiFormatDateTimeToBackend(DateTime? date) => date == null ? null : DateFormat("dd-MM-yyyy HH:mm:ss").format(date);
   static String? apiFormatInternational(DateTime? date) => date == null ? null : DateFormat("yyyy-MM-dd").format(date);
   static String? apiFormatInternationalWithTime(DateTime? date) => date == null ? null : DateFormat("yyyy-MM-dd'T'HH:mm:ss'.000Z'").format(date);
+  static DateTime parseFromBrazilDateTime(String date) => DateFormat("dd/MM/yyyy HH:mm:ss").parse(date);
 
   // Reverse
   static String fromBrazilToISOFormat(String brDate) {

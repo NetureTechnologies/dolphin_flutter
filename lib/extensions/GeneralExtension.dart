@@ -36,6 +36,7 @@ extension TextUtilsStringExtension on String {
   // Converters
   DateTime get convertDateFromApi => DateTimeUtils.apiFormatDateFromBackend(this);
   DateTime get convertDateTimeFromApi => DateTimeUtils.apiFormatDateTimeFromBackend(this);
+  DateTime get convertDateTimeFromBrFormat => DateTimeUtils.parseFromBrazilDateTime(this);
 }
 
 extension DateTimeNullableUtilsExtension on DateTime? {
