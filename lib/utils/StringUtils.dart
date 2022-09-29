@@ -285,16 +285,16 @@ class StringUtils {
    */
   static String formatBytesReadable(num bytes) {
     if(bytes >= 1099511627776) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.terabyte)} TB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.tebibyte)} TB";
     }
     else if (bytes >= 1073741824) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.gigabyte)} GB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.gibibyte)} GB";
     }
     else if (bytes >= 1048576) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.megabyte)} MB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.mebibyte)} MB";
     }
     else {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kilobyte)} KB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kibibyte)} KB";
     }
   }
 }
