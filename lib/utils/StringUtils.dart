@@ -1,10 +1,11 @@
 library dolphin_flutter;
 
-import 'package:byte_converter/byte_converter.dart';
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 import 'package:intl/intl.dart';
 import 'package:quiver/strings.dart';
+import 'package:units_converter/models/extension_converter.dart';
+import 'package:units_converter/properties/digital_data.dart';
 
 class StringUtils {
   static RegExp regexNumberOnly = RegExp(r'[^\d]');
@@ -283,19 +284,17 @@ class StringUtils {
    * Data Sizes
    */
   static String formatBytesReadable(num bytes) {
-    ByteConverter converter = ByteConverter(bytes.toDouble());
-
     if(bytes >= 1099511627776) {
-      return "${converter.teraBytes} TB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.terabyte)} TB";
     }
     else if (bytes >= 1073741824) {
-      return "${converter.gigaBytes} GB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.gigabyte)} GB";
     }
     else if (bytes >= 1048576) {
-      return "${converter.megaBytes} MB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.megabyte)} MB";
     }
     else {
-      return "${converter.kiloBytes} KB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kilobyte)} KB";
     }
   }
 }
