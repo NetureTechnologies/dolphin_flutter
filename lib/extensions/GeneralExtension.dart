@@ -1,6 +1,7 @@
 library dolphin_flutter;
 
 import 'package:dolphin_flutter/utils/DateTimeUtils.dart';
+import 'package:dolphin_flutter/utils/NumUtils.dart';
 import 'package:dolphin_flutter/utils/StringUtils.dart';
 import 'package:dolphin_flutter/utils/ValidatorUtils.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -83,7 +84,11 @@ extension CurrencyUtilsExtension on num {
   String get formatCentsToReais => StringUtils.centsToReais(this);
   String get formatCentsToReaisNoSymbol => StringUtils.centsToReaisNoSymbol(this);
   String get formatCentsToReaisHidden => StringUtils.centsToReais(this).replaceAll(new RegExp(r'\d'),'*').replaceAll('.', '*').replaceAll(',', '*');
+}
+
+extension BytesExtension on num {
   String get formatBytesReadable => StringUtils.formatBytesReadable(this);
+  int? get bytesToGb => NumUtils.bytesToGb(this);
 }
 
 extension DoubleExtensions on double {
