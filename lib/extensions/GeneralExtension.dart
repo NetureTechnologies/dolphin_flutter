@@ -89,6 +89,7 @@ extension CurrencyUtilsExtension on num {
 extension BytesExtension on num {
   String get formatBytesReadable => StringUtils.formatBytesReadable(this);
   int? get bytesToGb => NumUtils.bytesToGb(this);
+  int? get gbToBytes => NumUtils.gbToBytes(this);
 }
 
 extension DoubleExtensions on double {
