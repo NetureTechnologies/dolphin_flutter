@@ -1,6 +1,6 @@
 name: dolphin_flutter
 description: Dolphin Shared Library
-version: 0.0.34
+version: 0.0.35
 homepage: https://www.neture.com.br
 
 environment:
@@ -19,6 +19,7 @@ dependencies:
   cpf_cnpj_validator: ^2.0.0
   units_converter: ^2.0.1
   timeago: ^3.3.0
+  email_validator: ^2.1.16
 
   # Language and Region
   intl: ^0.17.0

@@ -2,13 +2,13 @@ library dolphin_flutter;
 
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:intl/intl.dart';
 
 class ValidatorUtils {
   static RegExp regexCpfCnpj = RegExp(r'[^\d]');
   static RegExp regexNameComplete = RegExp(r"^(\s|[A-Za-z0-9áéíóúãõâêîôûç']+ [A-Za-z0-9áéíóúãõâêîôûç']+)*$", caseSensitive: false);
   static RegExp regexPhone = RegExp(r'^\([1-9][0-9]\)\s(?:9\d|[2-8])\d{3}\-\d{4}$');
-  static RegExp regexEmail = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$");
   static RegExp regexCep = RegExp(r'^\d{5}[-]\d{3}$');
   static RegExp regexWhitespaces = RegExp(r"\s+\b|\b\s| ");
 
@@ -69,7 +69,7 @@ class ValidatorUtils {
     if(!validateEmpty(email))
       return false;
 
-    return regexEmail.hasMatch(email);
+    return EmailValidator.validate(email);
   }
   static bool validateCep(String cep) {
     if(!validateEmpty(cep))
