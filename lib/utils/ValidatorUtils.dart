@@ -8,7 +8,7 @@ class ValidatorUtils {
   static RegExp regexCpfCnpj = RegExp(r'[^\d]');
   static RegExp regexNameComplete = RegExp(r"^(\s|[A-Za-z0-9áéíóúãõâêîôûç']+ [A-Za-z0-9áéíóúãõâêîôûç']+)*$", caseSensitive: false);
   static RegExp regexPhone = RegExp(r'^\([1-9][0-9]\)\s(?:9\d|[2-8])\d{3}\-\d{4}$');
-  static RegExp regexEmail = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$");
+  static RegExp regexEmail = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$");
   static RegExp regexCep = RegExp(r'^\d{5}[-]\d{3}$');
   static RegExp regexWhitespaces = RegExp(r"\s+\b|\b\s| ");
 
