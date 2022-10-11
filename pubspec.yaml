@@ -1,6 +1,6 @@
 name: dolphin_flutter
 description: Dolphin Shared Library
-version: 0.0.35
+version: 0.0.36
 homepage: https://www.neture.com.br
 
 environment:
@@ -26,6 +26,10 @@ dependencies:
 
   # Logging
   logger: ^1.1.0
+
+  # Tag Editor
+  pointer_interceptor: ^0.9.1
+  debounce_throttle: ^2.0.0
 
 dev_dependencies:
   flutter_test:
