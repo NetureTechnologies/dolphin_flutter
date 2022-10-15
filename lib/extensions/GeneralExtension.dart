@@ -90,6 +90,7 @@ extension BytesExtension on num {
   String get formatBytesReadable => StringUtils.formatBytesReadable(this);
   int? get bytesToGb => NumUtils.bytesToGb(this);
   int? get gbToBytes => NumUtils.gbToBytes(this);
+  int? get mbToGb => NumUtils.mbToGb(this);
 }
 
 extension DoubleExtensions on double {
