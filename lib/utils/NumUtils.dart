@@ -12,6 +12,6 @@ class NumUtils {
     return gb.convertFromTo(DIGITAL_DATA.gibibyte, DIGITAL_DATA.byte)?.toInt();
   }
   static int? mbToGb(num mb) {
-    return mb.convertFromTo(DIGITAL_DATA.megabyte, DIGITAL_DATA.gibibyte)?.toInt();
+    return mb.convertFromTo(DIGITAL_DATA.mebibit, DIGITAL_DATA.gibibyte)?.toInt();
   }
 }
