@@ -88,6 +88,7 @@ extension CurrencyUtilsExtension on num {
 
 extension BytesExtension on num {
   String get formatBytesReadable => StringUtils.formatBytesReadable(this);
+  String get formatMebibytesReadable => StringUtils.formatMebibytesReadable(this);
   int? get bytesToGb => NumUtils.bytesToGb(this);
   int? get gbToBytes => NumUtils.gbToBytes(this);
   int? get mbToGb => NumUtils.mbToGb(this);
