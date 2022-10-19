@@ -297,4 +297,18 @@ class StringUtils {
       return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kibibyte)} KB";
     }
   }
+  static String formatMebibytesReadable(num mebibytes) {
+    if (mebibytes >= 1073741824) {
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.pebibyte)} PB";
+    }
+    else if (mebibytes >= 1048576) {
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.tebibyte)} TB";
+    }
+    else if (mebibytes >= 1024) {
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.gibibyte)} GB";
+    }
+    else {
+      return "$mebibytes MB";
+    }
+  }
 }
