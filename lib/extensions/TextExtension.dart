@@ -1001,7 +1001,7 @@ extension TextExtension on Text {
   /// If the style's "inherit" property is true, the style will be merged with
   /// the closest enclosing [DefaultTextStyle]. Otherwise, the style will
   /// replace the closest enclosing [DefaultTextStyle].
-  Text setStyle(TextStyle style) => copyWith(style: style);
+  Text setStyle(TextStyle? style) => copyWith(style: style);
 
   /// Wraps this Text with an Expanded widget
   Expanded expanded() => Expanded(child: copyWith());
