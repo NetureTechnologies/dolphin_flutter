@@ -1043,4 +1043,50 @@ extension TextExtension on Text {
         textWidthBasis: textWidthBasis ?? this.textWidthBasis,
         style: style != null ? this.style?.merge(style) ?? style : this.style);
   }
+
+  Text styleDisplayLarge(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.displayLarge);
+
+  Text styleDisplayMedium(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.displayMedium);
+
+  Text styleDisplaySmall(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.displaySmall);
+
+  Text styleHeadlineLarge(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.headlineLarge);
+
+  Text styleHeadlineMedium(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.headlineMedium);
+
+  Text styleHeadlineSmall(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.headlineSmall);
+
+  Text styleTitleLarge(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.titleLarge);
+
+  Text styleTitleMedium(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.titleMedium);
+
+  Text styleTitleSmall(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.titleSmall);
+
+  Text styleLabelLarge(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.labelLarge);
+
+  Text styleLabelMedium(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.labelMedium);
+
+  Text styleLabelSmall(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.labelSmall);
+
+  Text styleBodyLarge(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.bodyLarge);
+
+  Text styleBodyMedium(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.bodyMedium);
+
+  Text styleBodySmall(BuildContext context) =>
+      copyWith(style: Theme.of(context).textTheme.bodySmall);
+
 }
