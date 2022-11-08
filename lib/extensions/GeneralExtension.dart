@@ -49,6 +49,7 @@ extension DateTimeNullableUtilsExtension on DateTime? {
   String? get formatApiInternationalDate => DateTimeUtils.apiFormatInternational(this);
   String? get formatApiInternationalDateTime => DateTimeUtils.apiFormatInternationalWithTime(this);
   String? get monthName => DateTimeUtils.getMonthName(this);
+  String? get formatUiTime => DateTimeUtils.uiFormatTime(this);
 }
 
 extension DateTimeUtilsExtension on DateTime {
