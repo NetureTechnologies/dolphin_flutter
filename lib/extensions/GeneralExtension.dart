@@ -159,3 +159,7 @@ extension GeneralUtilsObjectExtension on Object {
   /// Otherwise return `false` to not affect logical-OR expression. As `false` denotes undefined or N/A since object is not `num`
   bool get _isNumObjectZero => (this is num) ? (this as num) == 0 : false;
 }
+
+extension IntExtensions on int? {
+  int get zeroOrNullToOne => this == null ? 1 : (this! <= 1 ? 1 : this!) ;
+}
