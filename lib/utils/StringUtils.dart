@@ -285,27 +285,27 @@ class StringUtils {
    */
   static String formatBytesReadable(num bytes) {
     if(bytes >= 1099511627776) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.tebibyte)} TB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.tebibyte)?.toStringAsFixed(2)} TB";
     }
     else if (bytes >= 1073741824) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.gibibyte)} GB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.gibibyte)?.toStringAsFixed(2)} GB";
     }
     else if (bytes >= 1048576) {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.mebibyte)} MB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.mebibyte)?.toStringAsFixed(2)} MB";
     }
     else {
-      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kibibyte)} KB";
+      return "${bytes.convertFromTo(DIGITAL_DATA.byte, DIGITAL_DATA.kibibyte)?.toStringAsFixed(2)} KB";
     }
   }
   static String formatMebibytesReadable(num mebibytes) {
     if (mebibytes >= 1073741824) {
-      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.pebibyte)} PB";
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.pebibyte)?.toStringAsFixed(2)} PB";
     }
     else if (mebibytes >= 1048576) {
-      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.tebibyte)} TB";
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.tebibyte)?.toStringAsFixed(2)} TB";
     }
     else if (mebibytes >= 1024) {
-      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.gibibyte)} GB";
+      return "${mebibytes.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.gibibyte)?.toStringAsFixed(2)} GB";
     }
     else {
       return "$mebibytes MB";
