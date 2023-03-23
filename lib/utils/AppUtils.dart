@@ -63,9 +63,9 @@ class AppUtils {
   bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
 
   // Device Info
-  static BaseDeviceInfo? getDeviceInfo() => _deviceInfo;
+  BaseDeviceInfo? getDeviceInfo() => _deviceInfo;
 
   // Platform
-  static HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
-  static OSPlatform get getOSPlatform => _osPlatform;
+  HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
+  OSPlatform get getOSPlatform => _osPlatform;
 }
