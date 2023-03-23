@@ -3,23 +3,28 @@ library dolphin_flutter;
 import 'dart:io';
 import 'package:dolphin_flutter/enums/hardware_platform.dart';
 import 'package:dolphin_flutter/enums/os_platform.dart';
-import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:platform_device_id/platform_device_id.dart';
+import 'DeviceUtils.dart';
 
 class AppUtils {
   static PackageInfo? _packageInfo;
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
+  static String? deviceId;
 
   Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
 
+    // Get Device ID
+    deviceId = await PlatformDeviceId.getDeviceId;
+
     // Figure out Hardware and OS Platforms
-    if(this.isPlatformWeb) {
+    if(DeviceUtils.isPlatformWeb) {
       _hardwarePlatform = HardwarePlatform.WEB;
       _osPlatform = OSPlatform.WEB;
     }
-    else if(this.isPlatformDesktop) {
+    else if(DeviceUtils.isPlatformDesktop) {
       _hardwarePlatform = HardwarePlatform.DESKTOP;
 
       if(Platform.isWindows)
@@ -29,7 +34,7 @@ class AppUtils {
       else if(Platform.isLinux)
         _osPlatform = OSPlatform.LINUX;
     }
-    else if(this.isPlatformMobile) {
+    else if(DeviceUtils.isPlatformMobile) {
       // TODO In the future, detect if its tablet or phone
       _hardwarePlatform = HardwarePlatform.PHONE;
 
@@ -44,6 +49,7 @@ class AppUtils {
     return this;
   }
 
+  // Versions
   String getVersionCute() => "${_packageInfo?.version}.${_packageInfo?.buildNumber}";
   bool isCurrentVersion(String version, [String? build]) {
     if (build != null)
@@ -53,10 +59,7 @@ class AppUtils {
   }
   bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
 
-  HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
-  OSPlatform get getOSPlatform => _osPlatform;
-
-  bool get isPlatformDesktop => Platform.isLinux || Platform.isMacOS || Platform.isWindows;
-  bool get isPlatformMobile => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
-  bool get isPlatformWeb => kIsWeb;
+  // Platform
+  static HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
+  static OSPlatform get getOSPlatform => _osPlatform;
 }

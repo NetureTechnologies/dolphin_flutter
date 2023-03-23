@@ -1,22 +1,13 @@
 library dolphin_flutter;
 
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 class DeviceUtils {
-  static String getPlatform() {
-    if(Platform.isAndroid)
-      return "ANDROID";
-    else if(Platform.isIOS)
-      return "APPLE IOS";
+  static bool get isPlatformDesktop => Platform.isLinux || Platform.isMacOS || Platform.isWindows;
+  static bool get isPlatformMobile => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
+  static bool get isPlatformWeb => kIsWeb;
 
-    return "";
-  }
-  static bool isAndroid() => getPlatform() == "ANDROID";
-  static bool isIOS() => getPlatform() == "APPLE IOS";
-
-  static String getHostname() {
-    return Platform.localHostname;
-  }
   static String getOperatingSystem() {
     return Platform.operatingSystem;
   }
@@ -25,5 +16,10 @@ class DeviceUtils {
   }
   static String getDartVersion() {
     return Platform.version;
+  }
+
+  // Desktop App only
+  static String getHostname() {
+    return Platform.localHostname;
   }
 }
