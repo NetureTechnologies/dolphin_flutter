@@ -1,6 +1,7 @@
 library dolphin_flutter;
 
 import 'dart:io';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dolphin_flutter/enums/hardware_platform.dart';
 import 'package:dolphin_flutter/enums/os_platform.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -9,12 +10,14 @@ import 'DeviceUtils.dart';
 
 class AppUtils {
   static PackageInfo? _packageInfo;
+  static BaseDeviceInfo? _deviceInfo;
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
   static String? deviceId;
 
   Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
+    _deviceInfo = await DeviceInfoPlugin().deviceInfo;
 
     // Get Device ID
     deviceId = await PlatformDeviceId.getDeviceId;
@@ -58,6 +61,9 @@ class AppUtils {
     return version == _packageInfo?.version;
   }
   bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
+
+  // Device Info
+  static BaseDeviceInfo? getDeviceInfo() => _deviceInfo;
 
   // Platform
   static HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
