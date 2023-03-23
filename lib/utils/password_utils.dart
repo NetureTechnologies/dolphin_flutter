@@ -1,5 +1,4 @@
 class PasswordUtils {
-
   static var passwordStrong = RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%])(?=.{8,})");
   static var passwordMedium = RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.{8,})");
   static var passwordWeak = RegExp(r"^(?=.*[a-z])(?=.*\d)(?=.{8,})");
@@ -26,7 +25,6 @@ class PasswordUtils {
       return PasswordStrength.WEAK;
 
     return PasswordStrength.UNACCEPTABLE;
-
   }
 }
 
