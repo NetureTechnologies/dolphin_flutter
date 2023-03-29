@@ -5,22 +5,19 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dolphin_flutter/enums/hardware_platform.dart';
 import 'package:dolphin_flutter/enums/os_platform.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:platform_device_id/platform_device_id.dart';
 import 'DeviceUtils.dart';
 
 class AppUtils {
   static PackageInfo? _packageInfo;
-  static BaseDeviceInfo? _deviceInfo;
+  static Map<String, dynamic> _deviceInfo = {};
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
-  static String? _deviceId;
 
   Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
-    _deviceInfo = await DeviceInfoPlugin().deviceInfo;
 
-    // Get Device ID
-    _deviceId = await PlatformDeviceId.getDeviceId;
+    // Get Device Info
+    _deviceInfo = (await DeviceInfoPlugin().deviceInfo).data;
 
     // Figure out Hardware and OS Platforms
     if(DeviceUtils.isPlatformWeb) {
@@ -63,13 +60,7 @@ class AppUtils {
   bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
 
   // Device Info
-  BaseDeviceInfo? getDeviceInfo() => _deviceInfo;
-
-  // Device ID
-  String get getDeviceId {
-    assert(_deviceId!=null);
-    return _deviceId!;
-  }
+  Map<String, dynamic> getDeviceInfo() => _deviceInfo;
 
   // Platform
   HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
