@@ -14,6 +14,7 @@ dependencies:
   # Core
   package_info_plus: ^3.0.3
   device_info_plus: ^8.1.0
+  uuid: ^3.0.7
 
   # Text
   quiver: ^3.2.1

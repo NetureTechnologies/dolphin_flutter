@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dolphin_flutter/enums/hardware_platform.dart';
 import 'package:dolphin_flutter/enums/os_platform.dart';
+import 'package:dolphin_flutter/utils/uuid_utils.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'DeviceUtils.dart';
 
@@ -12,12 +13,16 @@ class AppUtils {
   static Map<String, dynamic> _deviceInfo = {};
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
+  static String? _deviceId;
 
   Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
 
     // Get Device Info
     _deviceInfo = (await DeviceInfoPlugin().deviceInfo).data;
+
+    // Get Device ID
+    _deviceId = UUIDUtils.uuid.v4(); // Generate an Unique ID
 
     // Figure out Hardware and OS Platforms
     if(DeviceUtils.isPlatformWeb) {
@@ -61,6 +66,12 @@ class AppUtils {
 
   // Device Info
   Map<String, dynamic> getDeviceInfo() => _deviceInfo;
+
+  // Device ID
+  String get getDeviceId {
+    assert(_deviceId!=null);
+    return _deviceId!;
+  }
 
   // Platform
   HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
