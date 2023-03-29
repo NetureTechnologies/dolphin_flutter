@@ -13,14 +13,14 @@ class AppUtils {
   static BaseDeviceInfo? _deviceInfo;
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
-  static String? deviceId;
+  static String? _deviceId;
 
   Future<AppUtils> initialize() async {
     _packageInfo = await PackageInfo.fromPlatform();
     _deviceInfo = await DeviceInfoPlugin().deviceInfo;
 
     // Get Device ID
-    deviceId = await PlatformDeviceId.getDeviceId;
+    _deviceId = await PlatformDeviceId.getDeviceId;
 
     // Figure out Hardware and OS Platforms
     if(DeviceUtils.isPlatformWeb) {
@@ -64,6 +64,12 @@ class AppUtils {
 
   // Device Info
   BaseDeviceInfo? getDeviceInfo() => _deviceInfo;
+
+  // Device ID
+  String get getDeviceId {
+    assert(_deviceId!=null);
+    return _deviceId!;
+  }
 
   // Platform
   HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
