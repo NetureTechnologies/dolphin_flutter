@@ -312,6 +312,7 @@ class StringUtils {
     }
   }
   static bool isVideoFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".mp4") ||
         filename.endsWith(".mkv") ||
         filename.endsWith(".avi") ||
@@ -329,6 +330,7 @@ class StringUtils {
         filename.endsWith(".vob");
   }
   static bool isAudioFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".mp3") ||
         filename.endsWith(".wav") ||
         filename.endsWith(".flac") ||
@@ -344,6 +346,7 @@ class StringUtils {
         filename.endsWith(".opus");
   }
   static bool isImageFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".png") ||
         filename.endsWith(".jpg") ||
         filename.endsWith(".jpeg") ||
@@ -359,6 +362,7 @@ class StringUtils {
         filename.endsWith(".raw");
   }
   static bool isCompressedFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".zip") ||
         filename.endsWith(".rar") ||
         filename.endsWith(".7z") ||
@@ -375,6 +379,7 @@ class StringUtils {
         filename.endsWith(".txz");
   }
   static bool isTextFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".txt") ||
         filename.endsWith(".json") ||
         filename.endsWith(".xml") ||
@@ -388,6 +393,7 @@ class StringUtils {
         filename.endsWith(".tex");
   }
   static bool isSpreadsheetFile(String filename) {
+    filename = filename.toLowerCase();
     return filename.endsWith(".xlsx") ||
         filename.endsWith(".xls") ||
         filename.endsWith(".csv") ||
@@ -401,5 +407,5 @@ class StringUtils {
         filename.endsWith(".ots") ||
         filename.endsWith(".fods");
   }
-  static bool isPdfFile(String filename) => filename.endsWith(".pdf");
+  static bool isPdfFile(String filename) => filename.toLowerCase().endsWith(".pdf");
 }
