@@ -311,4 +311,95 @@ class StringUtils {
       return "$mebibytes MB";
     }
   }
+  static bool isVideoFile(String filename) {
+    return filename.endsWith(".mp4") ||
+        filename.endsWith(".mkv") ||
+        filename.endsWith(".avi") ||
+        filename.endsWith(".mov") ||
+        filename.endsWith(".wmv") ||
+        filename.endsWith(".flv") ||
+        filename.endsWith(".webm") ||
+        filename.endsWith(".m4v") ||
+        filename.endsWith(".3gp") ||
+        filename.endsWith(".mpg") ||
+        filename.endsWith(".mpeg") ||
+        filename.endsWith(".rm") ||
+        filename.endsWith(".rmvb") ||
+        filename.endsWith(".ts") ||
+        filename.endsWith(".vob");
+  }
+  static bool isAudioFile(String filename) {
+    return filename.endsWith(".mp3") ||
+        filename.endsWith(".wav") ||
+        filename.endsWith(".flac") ||
+        filename.endsWith(".m4a") ||
+        filename.endsWith(".aac") ||
+        filename.endsWith(".ogg") ||
+        filename.endsWith(".wma") ||
+        filename.endsWith(".amr") ||
+        filename.endsWith(".mid") ||
+        filename.endsWith(".midi") ||
+        filename.endsWith(".ac3") ||
+        filename.endsWith(".ape") ||
+        filename.endsWith(".opus");
+  }
+  static bool isImageFile(String filename) {
+    return filename.endsWith(".png") ||
+        filename.endsWith(".jpg") ||
+        filename.endsWith(".jpeg") ||
+        filename.endsWith(".gif") ||
+        filename.endsWith(".bmp") ||
+        filename.endsWith(".tiff") ||
+        filename.endsWith(".tif") ||
+        filename.endsWith(".webp") ||
+        filename.endsWith(".svg") ||
+        filename.endsWith(".ico") ||
+        filename.endsWith(".heic") ||
+        filename.endsWith(".heif") ||
+        filename.endsWith(".raw");
+  }
+  static bool isCompressedFile(String filename) {
+    return filename.endsWith(".zip") ||
+        filename.endsWith(".rar") ||
+        filename.endsWith(".7z") ||
+        filename.endsWith(".tar") ||
+        filename.endsWith(".gz") ||
+        filename.endsWith(".bz2") ||
+        filename.endsWith(".xz") ||
+        filename.endsWith(".lzma") ||
+        filename.endsWith(".tar.gz") ||
+        filename.endsWith(".tgz") ||
+        filename.endsWith(".tar.bz2") ||
+        filename.endsWith(".tbz2") ||
+        filename.endsWith(".tar.xz") ||
+        filename.endsWith(".txz");
+  }
+  static bool isTextFile(String filename) {
+    return filename.endsWith(".txt") ||
+        filename.endsWith(".json") ||
+        filename.endsWith(".xml") ||
+        filename.endsWith(".html") ||
+        filename.endsWith(".md") ||
+        filename.endsWith(".log") ||
+        filename.endsWith(".rtf") ||
+        filename.endsWith(".doc") ||
+        filename.endsWith(".docx") ||
+        filename.endsWith(".odt") ||
+        filename.endsWith(".tex");
+  }
+  static bool isSpreadsheetFile(String filename) {
+    return filename.endsWith(".xlsx") ||
+        filename.endsWith(".xls") ||
+        filename.endsWith(".csv") ||
+        filename.endsWith(".ods") ||
+        filename.endsWith(".numbers") ||
+        filename.endsWith(".gsheet") ||
+        filename.endsWith(".et") ||
+        filename.endsWith(".ett") ||
+        filename.endsWith(".xlsm") ||
+        filename.endsWith(".xltx") ||
+        filename.endsWith(".ots") ||
+        filename.endsWith(".fods");
+  }
+  static bool isPdfFile(String filename) => filename.endsWith(".pdf");
 }
