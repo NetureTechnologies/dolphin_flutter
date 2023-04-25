@@ -40,6 +40,16 @@ extension TextUtilsStringExtension on String {
   DateTime get convertDateTimeFromBrFormat => DateTimeUtils.parseFromBrazilDateTime(this);
 }
 
+extension FileUtilsStringExtension on String {
+  bool get isVideoFile => StringUtils.isVideoFile(this);
+  bool get isAudioFile => StringUtils.isAudioFile(this);
+  bool get isImageFile => StringUtils.isImageFile(this);
+  bool get isTextFile => StringUtils.isTextFile(this);
+  bool get isSpreadsheetFile => StringUtils.isSpreadsheetFile(this);
+  bool get isCompressedFile => StringUtils.isCompressedFile(this);
+  bool get isPdfFile => StringUtils.isPdfFile(this);
+}
+
 extension DateTimeNullableUtilsExtension on DateTime? {
   // Formatters
   String? get formatUiBrazil => DateTimeUtils.uiFormatBrazil(this);
