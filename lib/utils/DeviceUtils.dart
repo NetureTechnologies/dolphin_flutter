@@ -4,9 +4,30 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 class DeviceUtils {
-  static bool get isPlatformDesktop => Platform.isLinux || Platform.isMacOS || Platform.isWindows;
-  static bool get isPlatformMobile => Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
-  static bool get isPlatformWeb => kIsWeb;
+  static bool get isPlatformDesktop {
+    try {
+      return Platform.isLinux || Platform.isMacOS || Platform.isWindows;
+    }
+    catch(ex) {
+      return false;
+    }
+  }
+  static bool get isPlatformMobile {
+    try {
+      return Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
+    }
+    catch(ex) {
+       return false;
+    }
+  }
+  static bool get isPlatformWeb {
+    try {
+      return kIsWeb;
+    }
+    catch(ex) {
+      return false;
+    }
+  }
 
   static String getOperatingSystem() {
     return Platform.operatingSystem;
