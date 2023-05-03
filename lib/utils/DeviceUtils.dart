@@ -3,7 +3,7 @@ library dolphin_flutter;
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 
-class DeviceUtils {
+abstract class DeviceUtils {
   static bool isPlatformDesktop = false;
   static bool isPlatformMobile = false;
   static bool isPlatformWeb = false;
@@ -23,7 +23,9 @@ class DeviceUtils {
     return Platform.localHostname;
   }
 
-  // Cache
+  /*
+   * Cache
+   */
   static void cache() {
     try {
       isPlatformDesktop = Platform.isLinux || Platform.isMacOS || Platform.isWindows;

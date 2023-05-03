@@ -7,13 +7,33 @@ import 'package:dolphin_flutter/enums/os_platform.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'DeviceUtils.dart';
 
-class AppUtils {
+abstract class AppUtils {
   static PackageInfo? _packageInfo;
   static Map<String, dynamic> _deviceInfo = {};
   static OSPlatform _osPlatform = OSPlatform.UNKNOWN;
   static HardwarePlatform _hardwarePlatform = HardwarePlatform.UNKNOWN;
 
-  Future<AppUtils> initialize() async {
+  // Versions
+  static String getVersionCute() => "${_packageInfo?.version}.${_packageInfo?.buildNumber}";
+  static bool isCurrentVersion(String version, [String? build]) {
+    if (build != null)
+      return version == _packageInfo?.version && build == _packageInfo?.buildNumber;
+
+    return version == _packageInfo?.version;
+  }
+  static bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
+
+  // Device Info
+  static Map<String, dynamic> getDeviceInfo() => _deviceInfo;
+
+  // Platform
+  static HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
+  static OSPlatform get getOSPlatform => _osPlatform;
+
+  /*
+   * Cache
+   */
+  static Future<void> cache() async {
     _packageInfo = await PackageInfo.fromPlatform();
 
     // Get Device Info
@@ -45,24 +65,5 @@ class AppUtils {
       else if(Platform.isFuchsia)
         _osPlatform = OSPlatform.FUCHSIA;
     }
-
-    return this;
   }
-
-  // Versions
-  String getVersionCute() => "${_packageInfo?.version}.${_packageInfo?.buildNumber}";
-  bool isCurrentVersion(String version, [String? build]) {
-    if (build != null)
-      return version == _packageInfo?.version && build == _packageInfo?.buildNumber;
-
-    return version == _packageInfo?.version;
-  }
-  bool isCurrentBuild(String build) => build == _packageInfo?.buildNumber;
-
-  // Device Info
-  Map<String, dynamic> getDeviceInfo() => _deviceInfo;
-
-  // Platform
-  HardwarePlatform get getHardwarePlatform => _hardwarePlatform;
-  OSPlatform get getOSPlatform => _osPlatform;
 }
