@@ -1,11 +1,11 @@
 library dolphin_flutter;
 
-import 'package:dolphin_flutter/utils/AppUtils.dart';
-import 'package:dolphin_flutter/utils/DeviceUtils.dart';
+import 'package:dolphin_flutter/utils/app_utils.dart';
+import 'package:dolphin_flutter/utils/device_utils.dart';
 
 class Dolphin {
   static Future<void> initialize() async {
-    DeviceUtils.cache();
+    await DeviceUtils.cache();
     await AppUtils.cache();
   }
 }

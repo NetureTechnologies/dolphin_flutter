@@ -17,7 +17,7 @@ class ValidatorUtils {
         && value.toString().isNotEmpty
         && value.toString().replaceAll(regexWhitespaces, "").isNotEmpty;
   }
-  static bool validateCPFandCNPJ(String documento) {
+  static bool validateCPFandCNPJ(String? documento) {
     documento = documento == null ? "" : documento;
     var documentoNumbersOnly = documento.replaceAll(regexCpfCnpj, "");
 
@@ -27,13 +27,13 @@ class ValidatorUtils {
       return CNPJValidator.isValid(documentoNumbersOnly);
     }
   }
-  static bool validateNameIsComplete(String name) {
+  static bool validateNameIsComplete(String? name) {
     if(name==null || name.isEmpty)
       return false;
 
     return regexNameComplete.hasMatch(name);
   }
-  static bool validatePhoneNumber(String phone) {
+  static bool validatePhoneNumber(String? phone) {
     if(phone==null || phone.isEmpty)
       return false;
 
@@ -43,7 +43,7 @@ class ValidatorUtils {
 
     return regexPhone.hasMatch(phone);
   }
-  static bool validateDate(String date) {
+  static bool validateDate(String? date) {
     if (date == null || date.isEmpty || date.length < 10)
       return false;
 

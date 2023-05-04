@@ -1,9 +1,9 @@
 library dolphin_flutter;
 
-import 'package:dolphin_flutter/utils/DateTimeUtils.dart';
-import 'package:dolphin_flutter/utils/NumUtils.dart';
-import 'package:dolphin_flutter/utils/StringUtils.dart';
-import 'package:dolphin_flutter/utils/ValidatorUtils.dart';
+import 'package:dolphin_flutter/utils/date_time_utils.dart';
+import 'package:dolphin_flutter/utils/num_utils.dart';
+import 'package:dolphin_flutter/utils/string_utils.dart';
+import 'package:dolphin_flutter/utils/validator_utils.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 extension TextUtilsStringExtension on String {

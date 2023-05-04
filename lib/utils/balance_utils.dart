@@ -1,6 +1,6 @@
 library dolphin_flutter;
 
-class BalanceUtils {
+abstract class BalanceUtils {
   static int getBalanceAvailable(int balance, int tax) {
     return balance - tax;
 
