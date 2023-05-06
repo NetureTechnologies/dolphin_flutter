@@ -15,6 +15,7 @@ abstract class DeviceUtils {
   static String _hardware = "";
   static String _hardwareBrand = "";
   static String _serialNumber = "";
+  static String _osVersion = "";
 
   // Platform
   static bool isPlatformDesktop = false;
@@ -66,8 +67,9 @@ abstract class DeviceUtils {
         _hardwarePlatform = HardwarePlatform.WEB;
         _osPlatform = OSPlatform.WEB;
         _name = deviceInfo.browserName.name.toUpperCase();
-        _hardware = deviceInfo.userAgent?? "";
+        _hardware = deviceInfo.product?? "";
         _hardwareBrand = deviceInfo.vendor?? "";
+        _osVersion = deviceInfo.userAgent?? "";
       }
       else if (isPlatformDesktop) {
         _hardwarePlatform = HardwarePlatform.DESKTOP;
@@ -125,6 +127,12 @@ abstract class DeviceUtils {
         }
         else if (Platform.isFuchsia)
           _osPlatform = OSPlatform.FUCHSIA;
+
+        // OS Version
+        try {
+          _osVersion = Platform.operatingSystemVersion;
+        }
+        catch (_) {}
       }
     }
     catch(ex) {
