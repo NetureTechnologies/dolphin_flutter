@@ -29,13 +29,7 @@ abstract class DeviceUtils {
   static String getHardwareBrand() => _hardwareBrand;
   static String getSerialNumber() => _serialNumber;
   static String getOperatingSystem() => _osPlatform.name;
-  static String? getOperatingSystemVersion() {
-    String? version;
-    try {
-      version = Platform.operatingSystemVersion;
-    } catch (_) {}
-    return version;
-  }
+  static String getOperatingSystemVersion() => _osVersion;
   static String getDartVersion() => Platform.version;
 
   // Desktop App only
