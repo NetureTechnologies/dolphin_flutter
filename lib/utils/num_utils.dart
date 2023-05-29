@@ -14,4 +14,10 @@ class NumUtils {
   static int? mbToGb(num mb) {
     return mb.convertFromTo(DIGITAL_DATA.mebibyte, DIGITAL_DATA.gibibyte)?.toInt();
   }
+
+  static String secondsToUiTime(int seconds) {
+    int hours = seconds ~/ 3600;
+    int minutes = (seconds % 3600) ~/ 60;
+    return "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}";
+  }
 }
