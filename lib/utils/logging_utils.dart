@@ -9,7 +9,7 @@ class LoggingUtils {
 
   static void info(String related, String message) => _logger.i(buildMessage(related, message));
   static void warn(String related, String message) => _logger.w(buildMessage(related, message));
-  static void error(String related, String message, [dynamic error, dynamic stackTrace]) => _logger.e(buildMessage(related, message), error, stackTrace);
+  static void error(String related, String message, [dynamic error, dynamic stackTrace]) => _logger.e(buildMessage(related, message), error: error, stackTrace: stackTrace);
   static void debug(String related, String message) => _logger.d(buildMessage(related, message));
 
   static void getXLog(String text, {bool isError = false}) {
