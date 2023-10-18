@@ -174,3 +174,6 @@ extension GeneralUtilsObjectExtension on Object {
 extension IntExtensions on int? {
   int get zeroOrNullToOne => this == null ? 1 : (this! <= 1 ? 1 : this!) ;
 }
+extension IntegerExtensions on int {
+  String get formatSecondsToUiTime => NumUtils.secondsToUiTime(this);
+}
