@@ -1,36 +1,36 @@
 name: dolphin_flutter
 description: Dolphin Shared Library
-version: 0.0.69
+version: 0.0.70
 homepage: https://www.neture.com.br
 
 environment:
-  sdk: ">=2.18.4 <3.3.8"
-  flutter: ">=3.7.0"
+  sdk: '>=3.1.3 <4.0.0'
+  flutter: ">=3.13.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   # Core
-  package_info_plus: ^3.0.3
-  device_info_plus: ^8.1.0
-  uuid: ^3.0.7
+  package_info_plus: ^4.2.0
+  device_info_plus: ^9.1.0
+  uuid: ^4.1.0
 
   # Text
   quiver: ^3.2.1
   cpf_cnpj_validator: ^2.0.0
-  units_converter: ^2.1.0
-  timeago: ^3.4.0
+  units_converter: ^2.1.1
+  timeago: ^3.5.0
   email_validator: ^2.1.17
 
   # Language and Region
-  intl: ^0.18.0
+  intl: ^0.18.1
 
   # Logging
-  logger: ^1.3.0
+  logger: ^2.0.2+1
 
   # Tag Editor
-  pointer_interceptor: ^0.9.3+4
+  pointer_interceptor: ^0.9.3+6
   debounce_throttle: ^2.0.0
 
 dev_dependencies:
