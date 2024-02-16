@@ -21,6 +21,9 @@ abstract class DeviceUtils {
   static bool isPlatformDesktop = false;
   static bool isPlatformMobile = false;
   static bool isPlatformWeb = false;
+  static bool isPlatformWindows = false;
+  static bool isPlatformMacOS = false;
+  static bool isPlatformLinux = false;
 
   static HardwarePlatform getHardwarePlatform() => _hardwarePlatform;
   static OSPlatform getOSPlatform() => _osPlatform;
@@ -76,6 +79,8 @@ abstract class DeviceUtils {
           _hardware = deviceInfo.productName;
           _hardwareBrand = deviceInfo.registeredOwner;
           _serialNumber = deviceInfo.deviceId;
+          isPlatformWindows = true;
+
         }
 
         else if (Platform.isMacOS) {
@@ -86,6 +91,7 @@ abstract class DeviceUtils {
           _hardware = deviceInfo.model;
           _hardwareBrand = "APPLE";
           _serialNumber = deviceInfo.systemGUID?? "";
+          isPlatformMacOS = true;
         }
         else if (Platform.isLinux) {
           var deviceInfo = await DeviceInfoPlugin().linuxInfo;
@@ -95,6 +101,7 @@ abstract class DeviceUtils {
           _hardware = deviceInfo.variant?? "";
           _hardwareBrand = "";
           _serialNumber = deviceInfo.machineId?? "";
+          isPlatformLinux = true;
         }
       }
       else if (isPlatformMobile) {

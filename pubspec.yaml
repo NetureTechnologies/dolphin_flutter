@@ -12,25 +12,25 @@ dependencies:
     sdk: flutter
 
   # Core
-  package_info_plus: ^4.2.0
-  device_info_plus: ^9.1.0
-  uuid: ^4.1.0
+  package_info_plus: ^5.0.1
+  device_info_plus: ^9.1.2
+  uuid: ^4.3.3
 
   # Text
   quiver: ^3.2.1
   cpf_cnpj_validator: ^2.0.0
-  units_converter: ^2.1.1
-  timeago: ^3.5.0
+  units_converter: ^3.0.0
+  timeago: ^3.6.1
   email_validator: ^2.1.17
 
   # Language and Region
-  intl: ^0.18.1
+  intl: ^0.19.0
 
   # Logging
   logger: ^2.0.2+1
 
   # Tag Editor
-  pointer_interceptor: ^0.9.3+6
+  pointer_interceptor: ^0.10.1
   debounce_throttle: ^2.0.0
 
 dev_dependencies:
