@@ -61,6 +61,11 @@ class ValidatorUtils {
     final year = int.parse(date.split("/")[2]);
     return day > 0 && day <= 31 && month > 0 && month <= 12 && year > 1900 && year <= 9999;
   }
+  static bool validateTime(String? time) {
+    if (time == null)
+      return false;
+    return RegExp(r'^([01]\d|2[0-3]):([0-5]\d)$').hasMatch(time);
+  }
   static bool validateEmailTrimSpaces(String email) {
     email = email.trim();
     return validateEmail(email);
