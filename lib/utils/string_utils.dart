@@ -190,6 +190,8 @@ class StringUtils {
 
   static String lastName(String value) => value.split(" ").lastWhere((word) => !isEmpty(word));
 
+  static String escapeNewLines(String value) => value.replaceAll('\n', r'\\n');
+
   /// A method returns a human readable string representing a file _size
   static String filesize(dynamic size, [int round = 2]) {
     /**
